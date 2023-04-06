@@ -149,7 +149,7 @@ function Form({ data, setData, setActiveIndex, setEditingIndex, editingIndex }) 
         </Alert>
       </Snackbar>
       <div className="form-header">
-        <Link to="/" onClick={() => {
+        <Link to="users-list/" onClick={() => {
           setActiveIndex((prev) => prev - 1)
 
         }}>
@@ -215,10 +215,10 @@ function Form({ data, setData, setActiveIndex, setEditingIndex, editingIndex }) 
                 </Select>
               </FormControl>
               {editingIndex || editingIndex === 0 ? <>
-                {/* <Link className="" to="/" onClick={() => setActiveIndex((prev) => prev - 1)}> */}
+                {/* <Link className="" to="users-list/" onClick={() => setActiveIndex((prev) => prev - 1)}> */}
                   <Button sx={{marginBottom: "10px"}} type="submit" variant="contained" onClick={updateUserData}>Обновить информацию о пользователе</Button>
                 {/* </Link> */}
-                {/* <Link className="" to="/" onClick={() => setActiveIndex((prev) => prev - 1)}> */}
+                {/* <Link className="" to="users-list/" onClick={() => setActiveIndex((prev) => prev - 1)}> */}
                   <Button type="submit" color="error" variant="contained" onClick={deleteUser}>Удалить пользователя</Button>
                 {/* </Link> */}
               </>

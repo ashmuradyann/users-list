@@ -46,8 +46,8 @@ function App() {
       {transitions((props, item) => (
         <animated.div style={props} className="slide">
           <Routes location={item}>
-            <Route path="/" element={<UserList setEditingIndex={setEditingIndex} setData={setData} data={data} setActiveIndex={setActiveIndex} />} />
-            <Route path="/form" element={<Form data={data} setData={setData} setActiveIndex={setActiveIndex} editingIndex={editingIndex} setEditingIndex={setEditingIndex} />} />
+            <Route path="users-list/" element={<UserList setEditingIndex={setEditingIndex} setData={setData} data={data} setActiveIndex={setActiveIndex} />} />
+            <Route path="users-list/form" element={<Form data={data} setData={setData} setActiveIndex={setActiveIndex} editingIndex={editingIndex} setEditingIndex={setEditingIndex} />} />
           </Routes>
         </animated.div>
       ))}

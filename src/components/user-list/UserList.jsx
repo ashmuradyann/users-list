@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, memo } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, TextField, Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { Button, TextField, Card, CardContent, CardMedia, Typography, CardActions } from '@mui/material';
 
 import './user-list.scss'
 
-function UserList({ data, setEditingIndex, setActiveIndex }) {
+function UserList({ data, setData, setEditingIndex, setActiveIndex }) {
 
   const [users, setUsers] = useState(data)
   const [searchValue, setSearchValue] = useState("")
@@ -14,7 +14,14 @@ function UserList({ data, setEditingIndex, setActiveIndex }) {
                                  user.firstName.toLowerCase().startsWith(searchValue.toLowerCase()) ||
                                  user.lastName.toLowerCase().startsWith(searchValue.toLowerCase())))
   }, [searchValue])
-  
+
+  const deleteUser = (id) => {
+    setData(data.filter(user => user.id !== id))
+    setUsers(data.filter(user => user.id !== id))
+  }
+
+  console.log(users.length, users)
+
   return (
     <div className="user-list flex-column">
       <div className="user-list-header flex-column">
@@ -25,7 +32,7 @@ function UserList({ data, setEditingIndex, setActiveIndex }) {
         </Link>
         <TextField sx={{marginTop: "20px"}} color="secondary" label="Найти" variant="outlined" fullWidth value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
       </div>
-      <div className="user-list-cards">
+      {users.length !== 0 ? <div className="user-list-cards">
         {users.map(({id, username, firstName, lastName, roles, workBorders}) => <div key={id} className="user-card">
           <Card variant="outlined">
             <div className="flex-center">
@@ -53,11 +60,17 @@ function UserList({ data, setEditingIndex, setActiveIndex }) {
                 {workBorders.map((workBorder, i) => <Typography key={i} variant="body3" color="text.secondary">{workBorder.id + ": " + workBorder.name}{workBorders.length - i === 2 && ", "}</Typography>)}
               </div>
             </CardContent>
+            <CardActions>
+              <Button color="error" variant="contained" size="small" onClick={() => deleteUser(id)}>Удалить</Button>
+              <Link className="" to="/form" onClick={() => setActiveIndex((prev) => prev + 1)}>
+                <Button color="warning" variant="contained"  size="small" onClick={() => setEditingIndex(id)}>Редактировать</Button>
+              </Link>
+            </CardActions>
           </Card>
         </div>)}
-      </div>
+      </div> : <h1>Список пуст</h1>}
     </div>
   )
 }
 
-export default UserList
+export default memo(UserList)

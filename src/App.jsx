@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, memo } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useTransition, animated } from 'react-spring';
 
@@ -46,8 +46,8 @@ function App() {
       {transitions((props, item) => (
         <animated.div style={props} className="slide">
           <Routes location={item}>
-            <Route path="/" element={<UserList setEditingIndex={setEditingIndex} data={data} setActiveIndex={setActiveIndex} />} />
-            <Route path="/form" element={<Form setData={setData} setActiveIndex={setActiveIndex} />} />
+            <Route path="/" element={<UserList setEditingIndex={setEditingIndex} setData={setData} data={data} setActiveIndex={setActiveIndex} />} />
+            <Route path="/form" element={<Form data={data} setData={setData} setActiveIndex={setActiveIndex} editingIndex={editingIndex} setEditingIndex={setEditingIndex} />} />
           </Routes>
         </animated.div>
       ))}
@@ -55,4 +55,4 @@ function App() {
   );
 }
 
-export default App;
+export default memo(App);

@@ -8,7 +8,7 @@ import Form from './components/form/Form';
 function App() {
   const prevIndexRef = useRef(-1);
   const [activeIndex, setActiveIndex] = useState(0);
-
+  
   const location = useLocation();
 
   const transitions = useTransition(location, {

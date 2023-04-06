@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button, TextField } from '@mui/material';
 
-import './form.scss'
+import './form.scss';
 
 function Form({ setActiveIndex }) {
   return (

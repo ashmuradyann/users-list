@@ -5,10 +5,15 @@ import { useTransition, animated } from 'react-spring';
 import UserList from './components/user-list/UserList';
 import Form from './components/form/Form';
 
+import userData from './userData';
+
 function App() {
   const prevIndexRef = useRef(-1);
+    
+  const [data, setData] = useState(userData);
+  const [editingIndex, setEditingIndex] = useState(null);
+
   const [activeIndex, setActiveIndex] = useState(0);
-  
   const location = useLocation();
 
   const transitions = useTransition(location, {
@@ -30,6 +35,7 @@ function App() {
           ? `translateX(-100%)`
           : `translateX(100%)`,
     },
+    trail: 150,
     onRest: () => {
       prevIndexRef.current = activeIndex;
     },
@@ -40,8 +46,8 @@ function App() {
       {transitions((props, item) => (
         <animated.div style={props} className="slide">
           <Routes location={item}>
-            <Route path="/" element={<UserList setActiveIndex={setActiveIndex} />} />
-            <Route path="/form" element={<Form setActiveIndex={setActiveIndex} />} />
+            <Route path="/" element={<UserList setEditingIndex={setEditingIndex} data={data} setActiveIndex={setActiveIndex} />} />
+            <Route path="/form" element={<Form setData={setData} setActiveIndex={setActiveIndex} />} />
           </Routes>
         </animated.div>
       ))}

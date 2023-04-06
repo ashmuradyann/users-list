@@ -1,0 +1,34 @@
+.user-list {
+  width: 100%;
+}
+
+.user-list-header {
+  padding: 20px 0;
+}
+
+.user-list-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  // grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.user-card {
+  min-width: 15%;
+  margin: 0 10px 10px 0;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.user-card > div {
+  padding: 0 10px;
+}
+
+.user-card > div > div {
+  justify-content: space-around;
+}
+
+.user-card:hover {
+  transform: scale(1.1)
+}

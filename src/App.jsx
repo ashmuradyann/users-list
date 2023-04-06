@@ -5,10 +5,8 @@ import { useTransition, animated } from 'react-spring';
 import UserList from './components/user-list/UserList';
 import Form from './components/form/Form';
 
-import './App.scss';
-
 function App() {
-  const prevIndexRef = useRef(0);
+  const prevIndexRef = useRef(-1);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const location = useLocation();
@@ -18,8 +16,8 @@ function App() {
       opacity: 0.8,
       transform:
         activeIndex > prevIndexRef.current
-          ? `translateX(100%)`
-          : `translateX(-100%)`,
+          ? "translateX(100%)"
+          : "translateX(-100%)",
     },
     enter: {
       opacity: 1,

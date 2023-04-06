@@ -1,68 +1,62 @@
 export default [
   {
     id: 0,
-    username: "ashmuradyann",
-    name: "Ashot",
-    lastname: "Muradyan"
+    username: "mariatarasova",
+    name: "Мария",
+    lastname: "Тарасова"
   },
   {
     id: 1,
-    username: "ashmuradyann",
-    name: "Ashot",
-    lastname: "Muradyan"
+    username: "miroslav",
+    name: "Мирослав",
+    lastname: "Богданов"
   },
   {
     id: 2,
-    username: "ashmuradyann",
-    name: "Ashot",
-    lastname: "Muradyan"
+    username: "JuliaNefed",
+    name: "Юлия",
+    lastname: "Нефедова"
   },
   {
     id: 3,
-    username: "ashmuradyann",
-    name: "Ashot",
-    lastname: "Muradyan"
+    username: "dareazot",
+    name: "Дарья",
+    lastname: "Зотова"
   },
   {
     id: 4,
-    username: "ashmuradyann",
-    name: "Ashot",
-    lastname: "Muradyan"
+    username: "camelradi",
+    name: "Камила",
+    lastname: "Родионова"
   },
   {
     id: 5,
-    username: "ashmuradyann",
-    name: "Ashot",
-    lastname: "Muradyan"
+    username: "ceerasmir",
+    name: "Кира",
+    lastname: "Смирнова"
   },
   {
     id: 6,
-    username: "ashmuradyann",
-    name: "Ashot",
-    lastname: "Muradyan"
+    username: "annarudneva",
+    name: "Анна",
+    lastname: "Руднева"
   },
   {
     id: 7,
-    username: "ashmuradyann",
-    name: "Ashot",
-    lastname: "Muradyan"
+    username: "artemkuznecov",
+    name: "Артём",
+    lastname: "Кузнецов"
   },
   {
     id: 8,
-    username: "ashmuradyann",
-    name: "Ashot",
-    lastname: "Muradyan"
+    username: "danieleeoneov",
+    name: "Даниил",
+    lastname: "Иванов"
   },
   {
     id: 9,
-    username: "ashmuradyann",
-    name: "Ashot",
-    lastname: "Muradyan"
+    username: "alexafedorova",
+    name: "Александра",
+    lastname: "Федорова"
   },
-  {
-    id: 10,
-    username: "ashmuradyann",
-    name: "Ashot",
-    lastname: "Muradyan"
-  }
 ]

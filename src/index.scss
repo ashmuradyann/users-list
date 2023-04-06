@@ -7,6 +7,11 @@
 body {
   font-family: sans-serif;
   overflow-x: hidden;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
 }
 
 .flex-center {
@@ -35,4 +40,8 @@ body {
 .maxwidth {
   width: 100%;
   max-width: 1280px;
+}
+
+.app {
+  padding: 0 5%;
 }

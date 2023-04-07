@@ -25,7 +25,7 @@ function UserList({ data, setData, setEditingIndex, setActiveIndex }) {
   return (
     <div className="user-list flex-column">
       <div className="user-list-header flex-column">
-        <Link className="" to="users-list/form" onClick={() => setActiveIndex((prev) => prev + 1)}>
+        <Link className="" to="/users-list/form" onClick={() => setActiveIndex((prev) => prev + 1)}>
           <Button color="secondary" variant="contained">
             Добавить пользователя
           </Button>
@@ -62,7 +62,7 @@ function UserList({ data, setData, setEditingIndex, setActiveIndex }) {
             </CardContent>
             <CardActions>
               <Button color="error" variant="contained" size="small" onClick={() => deleteUser(id)}>Удалить</Button>
-              <Link className="" to="users-list/form" onClick={() => setActiveIndex((prev) => prev + 1)}>
+              <Link className="" to="/users-list/form" onClick={() => setActiveIndex((prev) => prev + 1)}>
                 <Button color="warning" variant="contained"  size="small" onClick={() => setEditingIndex(id)}>Редактировать</Button>
               </Link>
             </CardActions>

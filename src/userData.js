@@ -1,4 +1,4 @@
-export default [
+const userData = [
   {
     id: 0,
     username: "mariatarasova",
@@ -6,7 +6,7 @@ export default [
     firstName: "Мария",
     lastName: "Тарасова",
     roles: ["ANT", "DEVELOPER"],
-    workBorders: [{ id: "3", name: "Урус-Мартан" }]
+    workBorders: [{ id: "3", name: "Урус-Мартан" }],
   },
   {
     id: 1,
@@ -15,7 +15,10 @@ export default [
     firstName: "Мирослав",
     lastName: "Богданов",
     roles: ["ANT_MANAGER"],
-    workBorders: [{id: "1", name: "Белгатой"}, { id: "3", name: "Урус-Мартан" }]
+    workBorders: [
+      { id: "1", name: "Белгатой" },
+      { id: "3", name: "Урус-Мартан" },
+    ],
   },
   {
     id: 2,
@@ -24,7 +27,10 @@ export default [
     firstName: "Юлия",
     lastName: "Нефедова",
     roles: ["ANT", "ANT_OFFICER"],
-    workBorders: [{ id: "2", name: "Шали" }, { id: "3", name: "Урус-Мартан" }]
+    workBorders: [
+      { id: "2", name: "Шали" },
+      { id: "3", name: "Урус-Мартан" },
+    ],
   },
   {
     id: 3,
@@ -33,7 +39,10 @@ export default [
     firstName: "Дарья",
     lastName: "Зотова",
     roles: ["ANT", "ANT_OFFICER"],
-    workBorders: [{id: "1", name: "Белгатой"}, { id: "3", name: "Урус-Мартан" }]
+    workBorders: [
+      { id: "1", name: "Белгатой" },
+      { id: "3", name: "Урус-Мартан" },
+    ],
   },
   {
     id: 4,
@@ -42,7 +51,7 @@ export default [
     firstName: "Камила",
     lastName: "Родионова",
     roles: ["ANT_MANAGER"],
-    workBorders: [{id: "1", name: "Белгатой"}]
+    workBorders: [{ id: "1", name: "Белгатой" }],
   },
   {
     id: 5,
@@ -51,7 +60,10 @@ export default [
     firstName: "Кира",
     lastName: "Смирнова",
     roles: ["ANT", "ANT_OFFICER"],
-    workBorders: [{id: "1", name: "Белгатой"}, { id: "2", name: "Шали" }]
+    workBorders: [
+      { id: "1", name: "Белгатой" },
+      { id: "2", name: "Шали" },
+    ],
   },
   {
     id: 6,
@@ -60,7 +72,10 @@ export default [
     firstName: "Анна",
     lastName: "Руднева",
     roles: ["ANT_MANAGER"],
-    workBorders: [{id: "1", name: "Белгатой"}, { id: "2", name: "Шали" }]
+    workBorders: [
+      { id: "1", name: "Белгатой" },
+      { id: "2", name: "Шали" },
+    ],
   },
   {
     id: 7,
@@ -69,7 +84,7 @@ export default [
     firstName: "Артём",
     lastName: "Кузнецов",
     roles: ["ANT_MANAGER"],
-    workBorders: [{ id: "2", name: "Шали" }]
+    workBorders: [{ id: "2", name: "Шали" }],
   },
   {
     id: 8,
@@ -78,7 +93,7 @@ export default [
     firstName: "Даниил",
     lastName: "Иванов",
     roles: ["ANT", "DEVELOPER"],
-    workBorders: [{ id: "2", name: "Шали" }]
+    workBorders: [{ id: "2", name: "Шали" }],
   },
   {
     id: 9,
@@ -87,6 +102,8 @@ export default [
     firstName: "Александра",
     lastName: "Федорова",
     roles: ["ANT", "DEVELOPER"],
-    workBorders: [{id: "1", name: "Белгатой"}]
+    workBorders: [{ id: "1", name: "Белгатой" }],
   },
-]
+];
+
+export default userData;

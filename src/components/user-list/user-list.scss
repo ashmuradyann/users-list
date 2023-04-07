@@ -1,69 +1,64 @@
 .user-list {
   width: 100%;
-}
-
-.user-list-header {
-  padding: 20px 0;
-}
-
-.user-list-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 15px;
-  grid-row-gap: 15px;
-  padding-bottom: 20px;
-}
-
-.user-card {
-  min-width: 15%;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.user-card > div {
-  padding: 0 10px;
-}
-
-.user-card > div > div {
-  justify-content: space-around;
-}
-
-.user-card:hover {
-  transform: scale(1.1);
-}
-
-.card-buttons > button {
-  margin: 0 5px;
+  .user-list-header {
+    padding: 20px 0;
+  }
+  .user-list-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    padding-bottom: 20px;
+    .user-card {
+      min-width: 15%;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    & > div {
+      padding: 0 10px;
+      & > div {
+        justify-content: space-around;
+      }
+    }
+  }
+  button {
+    margin: 0 5px;
+  }
 }
 
 @media (max-width: 1220px) {
-  .user-list-cards {
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-  }
-  
-  .user-card:hover {
-    transform: scale(1.05);
+  .user-list {
+    .user-list-cards {
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+    }
+    .user-card:hover {
+      transform: scale(1.05);
+    }
   }
 }
 
 @media (max-width: 945px) {
-  .user-list-cards {
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+  .user-list {
+    .user-list-cards {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+    }
   }
 }
 
 @media (max-width: 624px) {
-  .user-list-cards {
-    grid-template-columns: repeat(1, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-  }
-
-  .user-list-cards {
-    padding-bottom: 50px;
+  .user-list {
+    .user-list-cards {
+      grid-template-columns: repeat(1, 1fr);
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+      padding-bottom: 50px;
+    }
   }
 }

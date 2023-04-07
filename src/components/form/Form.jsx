@@ -235,12 +235,8 @@ function Form({ data, setData, setActiveIndex, setEditingIndex, editingIndex }) 
                 </Select>
               </FormControl>
               {editingIndex || editingIndex === 0 ? <>
-                {/* <Link className="" to="/users-list/" onClick={() => setActiveIndex((prev) => prev - 1)}> */}
                   <Button sx={{marginBottom: "10px"}} type="submit" variant="contained" onClick={updateUserData}>Обновить информацию о пользователе</Button>
-                {/* </Link> */}
-                {/* <Link className="" to="/users-list/" onClick={() => setActiveIndex((prev) => prev - 1)}> */}
                   <Button type="submit" color="error" variant="contained" onClick={deleteUser}>Удалить пользователя</Button>
-                {/* </Link> */}
               </>
                 : <Button type="submit" variant="contained" onClick={addUser}>Создать пользователя</Button>}
           </div>

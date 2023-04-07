@@ -15,7 +15,7 @@ function App() {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const location = useLocation();
-
+  console.log("app")
   const transitions = useTransition(location, {
     from: {
       opacity: 0.8,

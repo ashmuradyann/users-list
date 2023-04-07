@@ -20,7 +20,7 @@ function UserList({ data, setData, setEditingIndex, setActiveIndex }) {
     setUsers(data.filter(user => user.id !== id))
   }
 
-  console.log(users.length, users)
+  console.log("users")
 
   return (
     <div className="user-list flex-column">

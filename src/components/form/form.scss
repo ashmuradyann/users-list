@@ -5,16 +5,17 @@
 .form-header {
   width: 100%;
   padding: 20px 0;
-  // margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .form-container {
   width: 100%;
-  height: calc(100vh - 76.5px);
+  height: calc(100vh - 126.5px);
+  min-width: 300px;
+  max-width: 35%;
 }
 
 .form-fields-wrapper {
-  max-width: 35%;
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 10px;

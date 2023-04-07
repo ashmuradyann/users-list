@@ -58,7 +58,7 @@ function UserList({ data, setData, setEditingIndex, setActiveIndex }) {
                 {workBorders.map((workBorder, i) => <Typography key={i} variant="body3" color="text.secondary">{workBorder.id + ": " + workBorder.name}{workBorders.length - i === 2 && ", "}</Typography>)}
               </div>
             </CardContent>
-            <CardActions>
+            <CardActions className="card-buttons">
               <Button color="error" variant="contained" size="small" onClick={() => deleteUser(id)}>Удалить</Button>
               <Link className="" to="/users-list/form" onClick={() => setActiveIndex((prev) => prev + 1)}>
                 <Button color="warning" variant="contained"  size="small" onClick={() => setEditingIndex(id)}>Редактировать</Button>

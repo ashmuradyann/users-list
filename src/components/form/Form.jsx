@@ -1,4 +1,4 @@
-import { useEffect, useState, memo } from 'react';
+import { useEffect, useState, memo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, TextField, Select, MenuItem, InputLabel, FormControl, Alert, Snackbar, IconButton, InputAdornment, OutlinedInput } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
@@ -21,6 +21,12 @@ function Form({ data, setData, setActiveIndex, setEditingIndex, editingIndex }) 
     workBorders: []
   })
 
+  const usernameRef = useRef(null)
+  const passwordRef = useRef(null)
+  const firstNameRef = useRef(null)
+  const rolesRef = useRef(null)
+  const workBordersRef = useRef(null)
+
   useEffect(() => {
     data.forEach(user => {
       if (user.id === editingIndex) {
@@ -34,24 +40,34 @@ function Form({ data, setData, setActiveIndex, setEditingIndex, editingIndex }) 
     })
   }, [editingIndex])
   
-  const changeTextFields = (e) => {
-    const {name, value} = e.target
-    setTextFields({
-      ...textFields,
-      [name]: value
-    })
-  }
-
   const checkValidity = () => {
     if (textFields.username?.length >= 3 && 
         textFields.password?.length >= 4 && 
         textFields.firstName?.length >= 2 &&
         textFields.roles?.length >= 1 &&
         textFields.workBorders?.length >= 1) {
+      usernameRef.current = false
+      passwordRef.current = false
+      firstNameRef.current = false
+      rolesRef.current = false
+      workBordersRef.current = false
       return true
     } else {
+      if (textFields.username?.length < 3) usernameRef.current = true
+      if (textFields.password?.length < 4) passwordRef.current = true
+      if (textFields.firstName?.length < 2) firstNameRef.current = true
+      if (textFields.roles?.length < 1) rolesRef.current = true
+      if (textFields.workBorders?.length < 1) workBordersRef.current = true
       return false
     }
+  }
+  
+  const changeTextFields = (e) => {
+    const {name, value} = e.target
+    setTextFields({
+      ...textFields,
+      [name]: value
+    })
   }
 
   const addUser = () => {
@@ -121,7 +137,7 @@ function Form({ data, setData, setActiveIndex, setEditingIndex, editingIndex }) 
       password: "",
       firstName: "",
       lastName: "",
-      roles: [],
+      roles: ["ANT"],
       workBorders: []
     })
   }
@@ -166,10 +182,10 @@ function Form({ data, setData, setActiveIndex, setEditingIndex, editingIndex }) 
         <div className="form-fields-wrapper flex-column">
           <h2>{editingIndex || editingIndex === 0 ? "Обновить информацию пользователя" : "Создать нового пользователя"}</h2>
           <div className="form-fields flex-column">
-              <TextField required value={textFields.username} onChange={changeTextFields} name="username" label="username" variant="outlined" fullWidth />
+              <TextField required error={usernameRef.current} value={textFields.username} onChange={changeTextFields} name="username" label="username" variant="outlined" fullWidth />
               <FormControl sx={{ m: 1, width: '100%' }} variant="outlined">
                 <InputLabel htmlFor="outlined-adornment-password">password *</InputLabel>
-                <OutlinedInput type={hiddenPassword ? "text" : "password"} required value={textFields.password} onChange={changeTextFields} label="password" name="password" variant="outlined" fullWidth endAdornment={
+                <OutlinedInput required error={passwordRef.current} type={hiddenPassword ? "text" : "password"} value={textFields.password} onChange={changeTextFields} label="password" name="password" variant="outlined" fullWidth endAdornment={
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="toggle password visibility"
@@ -181,14 +197,16 @@ function Form({ data, setData, setActiveIndex, setEditingIndex, editingIndex }) 
                   </InputAdornment>
                 } />
               </FormControl>
-              <TextField required value={textFields.firstName} onChange={changeTextFields} name="firstName" label="firstName" variant="outlined" fullWidth />
+              <TextField required error={firstNameRef.current} value={textFields.firstName} onChange={changeTextFields} name="firstName" label="firstName" variant="outlined" fullWidth />
               <TextField value={textFields.lastName} onChange={changeTextFields} name="lastName" label="lastName" variant="outlined" fullWidth />
               <FormControl fullWidth>
                 <InputLabel>Roles</InputLabel>
                 <Select
+                  required
+                  error={rolesRef.current}
                   name="roles"
                   value={textFields.roles}
-                  label="Roles"
+                  label="Roles *"
                   onChange={changeTextFields}
                   fullWidth
                   multiple
@@ -202,9 +220,11 @@ function Form({ data, setData, setActiveIndex, setEditingIndex, editingIndex }) 
               <FormControl fullWidth>
                 <InputLabel>workBorders</InputLabel>
                 <Select
+                  required
+                  error={workBordersRef.current}
                   name="workBorders"
                   value={textFields.workBorders}
-                  label="workBorders"
+                  label="workBorders *"
                   onChange={changeTextFields}
                   fullWidth
                   multiple

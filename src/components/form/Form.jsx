@@ -126,8 +126,6 @@ function Form({ data, setData, setActiveIndex, setEditingIndex, editingIndex }) 
     })
   }
 
-  console.log("form")
-
   return (
     <div className="form flex-column">
       <Snackbar open={openErrorMsg} autoHideDuration={6000}>
